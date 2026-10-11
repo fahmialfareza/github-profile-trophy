@@ -1,5 +1,6 @@
 import { GithubApiService } from "../GithubApiService.ts";
-import { assertEquals, returnsNext, soxa, stub } from "../../../deps.ts";
+import { assertEquals, returnsNext, stub } from "../../../deps.ts";
+import { http } from "../http.ts";
 import { GitHubUserRepository } from "../../user_info.ts";
 
 const rateLimitMock = await import("../__mocks__/rateLimitMock.json", {
@@ -21,7 +22,7 @@ import { ServiceError } from "../../Types/index.ts";
 // Unfortunatelly, The spy is a global instance
 // We can't reset mock as Jest does.
 stub(
-  soxa,
+  http,
   "post",
   returnsNext([
     // Should get data in first try

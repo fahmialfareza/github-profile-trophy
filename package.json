@@ -1,0 +1,11 @@
+{
+  "name": "github-profile-trophy",
+  "private": true,
+  "scripts": {
+    "dev:worker": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.149.0"
+  }
+}

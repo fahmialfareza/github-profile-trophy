@@ -19,11 +19,12 @@ import { CONSTANTS } from "../utils.ts";
 import { EServiceKindError, ServiceError } from "../Types/index.ts";
 import { Logger } from "../Helpers/Logger.ts";
 import { requestGithubData } from "./request.ts";
+import { getEnv } from "../env.ts";
 
 // Need to be here - Exporting from another file makes array of null
 export const TOKENS = [
-  Deno.env.get("GITHUB_TOKEN1"),
-  Deno.env.get("GITHUB_TOKEN2"),
+  getEnv("GITHUB_TOKEN1"),
+  getEnv("GITHUB_TOKEN2"),
 ];
 
 export class GithubApiService extends GithubRepository {

@@ -1,4 +1,4 @@
-import { soxa } from "../../deps.ts";
+import { http } from "./http.ts";
 import {
   EServiceKindError,
   GithubError,
@@ -11,11 +11,8 @@ export async function requestGithubData<T = unknown>(
   variables: { [key: string]: string },
   token = "",
 ) {
-  const response = await soxa.post("", {}, {
-    data: { query, variables },
-    headers: {
-      Authorization: `bearer ${token}`,
-    },
+  const response = await http.post({ query, variables }, {
+    Authorization: `bearer ${token}`,
   }) as QueryDefaultResponse<{ user: T }>;
   const responseData = response.data;
 

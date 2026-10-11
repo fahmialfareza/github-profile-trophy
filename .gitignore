@@ -4,3 +4,6 @@
 deno.lock
 *.sh
 **/.DS_Store
+node_modules
+.wrangler/
+.dev.vars

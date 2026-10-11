@@ -1,4 +1,6 @@
-const enableLogging = Deno.env.get("ENV_TYPE") !== "test";
+import { getEnv } from "../env.ts";
+
+const enableLogging = getEnv("ENV_TYPE") !== "test";
 
 export class Logger {
   public static log(message: unknown): void {

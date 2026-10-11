@@ -1,9 +1,10 @@
-import { assertEquals, assertRejects, soxa, stub } from "../../../deps.ts";
+import { assertEquals, assertRejects, stub } from "../../../deps.ts";
+import { http } from "../http.ts";
 import { EServiceKindError, ServiceError } from "../../Types/index.ts";
 import { requestGithubData } from "../request.ts";
 
 Deno.test("requestGithubData rejects partial GraphQL responses", async () => {
-  const post = stub(soxa, "post", () => {
+  const post = stub(http, "post", () => {
     return Promise.resolve({
       data: {
         data: { user: { login: "test" } },

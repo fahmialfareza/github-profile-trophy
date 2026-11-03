@@ -7,3 +7,6 @@ deno.lock
 node_modules
 .wrangler/
 .dev.vars
+
+# Cloudflare Pages build output
+public/

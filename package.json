@@ -2,8 +2,9 @@
   "name": "github-profile-trophy",
   "private": true,
   "scripts": {
-    "dev:worker": "wrangler dev",
-    "deploy": "wrangler deploy"
+    "build:pages": "mkdir -p public",
+    "dev:pages": "npm run build:pages && wrangler pages dev",
+    "deploy": "npm run build:pages && wrangler pages deploy"
   },
   "devDependencies": {
     "wrangler": "^4.149.0"

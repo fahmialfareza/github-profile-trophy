@@ -1,15 +1,10 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "github-profile-trophy",
-  "main": "worker.ts",
+  "pages_build_output_dir": "public",
   "compatibility_date": "2026-10-01",
   "compatibility_flags": ["nodejs_compat"],
-  "workers_dev": true,
-  "observability": {
-    "enabled": true
-  },
   // Add GitHub tokens (GITHUB_TOKEN1, optionally GITHUB_TOKEN2) as secrets in
-  // the Cloudflare dashboard or with `npx wrangler secret put GITHUB_TOKEN1`.
-  "keep_vars": true,
+  // the Cloudflare dashboard or with `npx wrangler pages secret put GITHUB_TOKEN1`.
   "vars": {}
 }
